@@ -31,6 +31,7 @@ void drawOctopus() {
 
 void octopus(int x, int y, float size) {
   pushStyle();
+  pushMatrix();
   scale(size);
   translate(x, y);
 
@@ -209,7 +210,6 @@ void octopus(int x, int y, float size) {
   endShape();
   
   octopus_wiggle+=0.01;
-  scale(1);
-  translate(0, 0);
+  popMatrix();
   popStyle();
 }
