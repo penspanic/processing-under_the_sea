@@ -26,8 +26,8 @@ void draw() {
 
     // draw
     background(0);
-    drawBackground(frameThickness / 2, frameThickness / 2, width - frameThickness / 2, height - frameThickness / 2);
-    drawParticles(frameThickness / 2, frameThickness / 2, width - frameThickness / 2, height - frameThickness / 2);
+    drawBackground(0, 0, width, height);
+    drawParticles(0, 0, width, height);
     drawShark(sharkPosition);
     drawFish();
 
