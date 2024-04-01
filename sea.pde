@@ -59,6 +59,9 @@ void mouseClicked() {
       fishes[i].reverseXDirection();
     }
   }
+  if (isRayClicked()) {
+    reverseRayTail();
+  }
 }
 
 color darkerColor(color c) {
