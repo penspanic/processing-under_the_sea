@@ -26,7 +26,7 @@ void setupOctopus() {
 }
 
 void drawOctopus() {
-  octopus(400, height - 250, 0.8f);
+  octopus(800, height - 250, 0.8f);
 }
 
 void octopus(int x, int y, float size) {
@@ -40,7 +40,8 @@ void octopus(int x, int y, float size) {
   float noiseY;
 
   // sucker
-  fill(octopus_subColor);
+  color subColor = color(252,160,149);
+  fill(subColor);
   noiseY = (noise(octopus_wiggle + 0.5) * 20) - 10;
   beginShape();
   vertex(54, 263);
@@ -81,7 +82,8 @@ void octopus(int x, int y, float size) {
   // main body
   beginShape();
   noFill();
-  fill(octopus_mainColor);
+  color mColor = color(236, 77, 68);
+  fill(mColor);
   vertex(224, 274);
   bezierVertex(102, 54, 499, 92, 311, 275);
   bezierVertex(369, 354, 336, 260, 501, 336);
@@ -132,7 +134,7 @@ void octopus(int x, int y, float size) {
   endShape();
   
   // mouse
-  stroke(0);
+  stroke(175,35,46);
   fill(#F06D6D);
   ellipse(227, 227, 24, 38);
   line(224, 209, 256, 203);
@@ -154,8 +156,8 @@ void octopus(int x, int y, float size) {
   endShape();
 
   if (mousePressed &&
-      (get(mouseX, mouseY) == color(#F5C1C1) ||
-       get(mouseX, mouseY) == color(#D13030) ||
+      (get(mouseX, mouseY) == mColor ||
+       get(mouseX, mouseY) == subColor ||
        get(mouseX, mouseY) == color(#F06D6D))
      ) {
       // eye

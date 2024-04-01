@@ -32,7 +32,7 @@ void reverseRayTail() {
 void ray(int x, int y) {
   fill(215, 228, 246);
   stroke(178, 191, 210);
-  strokeWeight(6);
+  strokeWeight(3);
 
   beginShape();
 
@@ -56,7 +56,7 @@ void ray(int x, int y) {
   endShape();
 
   stroke(0);
-  strokeWeight(3);
+  strokeWeight(2);
 
   point(x-24, y-14); //코1
   point(x-26, y-4); //코2
