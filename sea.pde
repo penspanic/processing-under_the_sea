@@ -10,13 +10,35 @@ void drawFish() {
 }
 
 Fish[] createFishes() {
-  Fish[] fishes = {
-    new Fish(120, 500, 100, #FFB74B),
-    new Fish(800, 100, 80, #FF0000),
-    new Fish(400, 700, 150, #00FF00, -2),
-    new Fish(600, 300, 140, #00FFFF, -3),
-  };
-  return fishes;
+  ArrayList<Fish> fishList = new ArrayList<Fish>();
+  fishList.add(new Fish(120, 500, 100, #FFB74B));
+  fishList.add(new Fish(800, 100, 80, #FF0000));
+  fishList.add(new Fish(400, 800, 150, #00FF00, -2));
+  fishList.add(new Fish(600, 300, 140, #00FFFF, -3));
+
+  for (int i = 0; i < 20; ++i)
+  {
+    int size = (int)random(30, 50);
+    color c = randomColor();
+    float x = random(0, width);
+    float y = random(0, height);
+    float speed = random(-2, 2);
+    fishList.add(new Fish(x, y, size, c, speed));
+  }
+
+  for (int i = 0; i < 30; ++i)
+  {
+    int size = (int)random(10, 30);
+    color c = randomColor();
+    float x = random(0, width);
+    float y = random(0, height);
+    float speed = random(-2, 2);
+    fishList.add(new Fish(x, y, size, c, speed));
+  }
+
+  Fish[] arr = new Fish[fishList.size()];
+  fishList.toArray(arr);
+  return arr;
 }
 
 void moveFishes(Fish[] fishes) {

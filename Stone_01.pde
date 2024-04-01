@@ -92,9 +92,13 @@ void seaweeds_02(int f, int g){
   curveVertex(152+f+xc,363+g);
   curveVertex(132+f+xc,387+g);
   curveVertex(123+f+xc,399+g);
+  fill(#ffffff);
   curveVertex(133+f+xc,442+g);
+  fill(#ff0000);
   curveVertex(122+f,479+g);
+  fill(#00ff00);
   curveVertex(119+f,503+g);
+  fill(#ff00ff);
   curveVertex(119+f,503+g);
   endShape();
   //seaweeds_middle_line

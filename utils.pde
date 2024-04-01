@@ -67,3 +67,10 @@ void drawVerticesWithWaveDistortion2(PVector position, PGraphics source, PGraphi
     source.mask(mask);
     image(source, position.x, position.y);
 }
+
+color randomColor() {
+    float r = random(256);
+    float g = random(256);
+    float b = random(256);
+    return color(r, g, b);
+}

@@ -5,13 +5,13 @@ class Fish {
   private color c;
   private float fishWidth;
   private float fishHeight;
-  private int xDir;
+  private float xDir;
 
   Fish(float x, float y, int size, color c) {
     this(x, y, size, c, 2);
   }
   
-  Fish(float x, float y, int size, color c, int xDir) {
+  Fish(float x, float y, int size, color c, float xDir) {
     this.x = x;
     this.y = y;
     this.size = size;
