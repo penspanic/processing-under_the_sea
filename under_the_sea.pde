@@ -26,6 +26,7 @@ void draw() {
     // draw
     background(0);
     drawBackground(0, 0, width, height);
+    drawStone();
     drawParticles(0, 0, width, height);
     drawShark(sharkPosition);
     drawFish();
@@ -33,7 +34,6 @@ void draw() {
     turtle(turtleX, turtleY);
     drawOctopus();
     drawRay();
-    drawStone();
     drawBubble();
 
     //drawFrame();
