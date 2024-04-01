@@ -70,8 +70,8 @@ void drawBubble(){
   if(mousePressed == true){
     a += 2;
     b += 1;
-    a = constrain(a, 10, width);
-    b = constrain(b, 10, height);
+    // a = constrain(a, 10, width);
+    // b = constrain(b, 10, height);
     
   }else if(mouseX > 80){
     
