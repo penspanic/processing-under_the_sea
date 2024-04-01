@@ -1,5 +1,5 @@
 int rayX = 187;
-int rayY = 880;
+int rayY = 680;
 int rayDirx = 1;
 int rayDiry = 1;
 int rayTailDir = 1;

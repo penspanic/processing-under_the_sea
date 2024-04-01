@@ -5,7 +5,7 @@ float inc = TWO_PI/200;
 
 void updateTurtle() {
   turtleX += 1;
-  turtleY = 700 + sin(turtleA) * 50;
+  turtleY = 400 + sin(turtleA) * 50;
   turtleA += inc;
 
   if (turtleX > width + 200) {
