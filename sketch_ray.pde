@@ -38,25 +38,19 @@ void ray(int x, int y) {
 
   vertex(x, y); //맨앞1
   bezierVertex(x, y, x-3, y-30, x-23, y-31); //1~2
-  vertex(x-21, y-31); //2
   bezierVertex(x-21, y-31, x-22, y-64, x-46, y-85); //2~3
-  vertex(x-48, y-85); //3
   bezierVertex(x-56, y-85, x-87, y-84, x-104, y-38); //3~4
 
   // 2
   if (rayTailDir == 1) {
-    vertex(x-102, y-43); //4 꼬리 시작
     bezierVertex(x-112, y-38, x-128, y-53, x-148, y-25); //4~5 꼬리
     bezierVertex(x-167, y-16, x-121, y-42, x-108, y-22); //5~6
   } else {
-    vertex(x-102, y-43); //4 꼬리 시작
     bezierVertex(x-112, y-38, x-162, y-43, x-150, y-50); //4~5 꼬리
     bezierVertex(x-167, y-40, x-112, y-20, x-108, y-22); //5~6
   }
   bezierVertex(x-108, y-22, x-109, y+15, x-87, y+40); //6~7
-  vertex(x-87, y+40); //7
   bezierVertex(x-87, y+40, x-60, y+41, x-37, y+16); //7~8
-  vertex(x-37, y+16); //8
   bezierVertex(x-37, y+16, x-9, y+15, x, y); //8~1
 
   endShape();
