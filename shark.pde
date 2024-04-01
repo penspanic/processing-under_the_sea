@@ -1,6 +1,6 @@
 ArrayList<PVector> sharkVertices = createShark();
 PVector sharkPosition = new PVector(700, 100);
-PVector sharkDirection = new PVector(-3, 0);
+PVector sharkDirection = new PVector(-12, 0);
 PVector sharkSize = new PVector(400, 200);
 PGraphics sharkSourceImage;
 PGraphics sharkMaskImage;
@@ -93,9 +93,10 @@ void drawShark(PVector position) {
     float xCycle = 100;
     float xAmp = 10;
     float yAmp = 5;
-    drawVerticesWithWaveDistortion2(position, sharkSourceImage, sharkMaskImage, sharkVertices, sharkYSize, xCycle, xAmp, yAmp);
+    float distortionSpeed = 5;
+    drawVerticesWithWaveDistortion2(position, sharkSourceImage, sharkMaskImage, sharkVertices, sharkYSize, xCycle, xAmp, yAmp, distortionSpeed);
     PVector eyePosition = new PVector(75, 90);
-    eyePosition = waveDistortion(eyePosition, sharkYSize, xCycle, xAmp / 3, yAmp);
+    eyePosition = waveDistortion(eyePosition, sharkYSize, xCycle, xAmp / 3, yAmp, distortionSpeed);
     // draw eye
     noStroke();
     fill(0);
