@@ -12,7 +12,6 @@ float timeOfDay = 0.0;
 float lightFactor = 0.0;
 float todCycleSeconds = 10.0;
 float oceanCurrents = 0; // 해류, x방향성을 가지고 음수일 수 있다. 객체들의 움직임에 영향을 준다.
-ArrayList<Particle> particles = new ArrayList<Particle>();
 
 
 void draw() {
@@ -40,41 +39,6 @@ void draw() {
     //drawFrame();
 }
 
-public class Particle
-{
-    public float x;
-    public float y;
-    public float size;
-    public float dirX;
-    public float dirY;
-    public color c;
-    public Particle(float x, float y, float size, float dirX, float dirY, color c)
-    {
-        this.x = x;
-        this.y = y;
-        this.size = size;
-        this.dirX = dirX;
-        this.dirY = dirY;
-        this.c = c;
-    }
-}
-void setupParticles() {
-    int particleCount = 100;
-    for (int i = 0; i < particleCount; ++i)
-    {
-        float particleX = random(0, width);
-        float particleY = random(0, height);
-        float particleSize = random(1, 10);
-        float randomDirection = random(0, 360);
-        float dirX = cos(radians(randomDirection));
-        float dirY = sin(radians(randomDirection));
-        color c = color(random(240, 255), random(240, 255), random(240, 255), random(100, 255));
-        Particle particle = new Particle(particleX, particleY, particleSize, dirX, dirY, c);
-        particles.add(particle);
-    }
-}
-
-
 void updateTimeOfDay() {
     timeOfDay = (millis() % (int)(todCycleSeconds * 1000)) / (todCycleSeconds * 1000);
     if (timeOfDay > 0.5f)
@@ -85,10 +49,6 @@ void updateTimeOfDay() {
     {
         lightFactor = timeOfDay * 2;
     }
-
-//    lightFactor = lerp(0.3f, 1f, lightFactor);
-
-//println(String.format("tod : {%f}, t : {%f}", timeOfDay, lightFactor));
 }
 
 void updateOceanCurrents() {
@@ -96,34 +56,6 @@ void updateOceanCurrents() {
     // noise함수는 0~1사이의 값을 반환하므로 -0.5를 곱해 -0.5~0.5사이의 값을 반환하도록 한다.
     oceanCurrents = (noise(timeOfDay * 10) - 0.5) * 2 * 10;
 }
-
-void updateParticles() {
-    // particle은 랜덤한 방향으로 움직이며, 화면 밖으로 나가면 화면 밖 어딘가에서 화면 안으로 들어옴.
-    for (Particle particle : particles)
-    {
-        // oceanCurrent의 영향은 size가 클수록 적게 받는다. 질량을 시뮬레이션.
-        float oceanCurrentX = oceanCurrents * (2 / particle.size);
-        particle.x += particle.dirX + oceanCurrentX;
-        particle.y += particle.dirY;
-        if (particle.x < 0)
-        {
-            particle.x = width;
-        }
-        else if (particle.x > width)
-        {
-            particle.x = 0;
-        }
-        if (particle.y < 0)
-        {
-            particle.y = height;
-        }
-        else if (particle.y > height)
-        {
-            particle.y = 0;
-        }
-    }
-}
-
 
 
 void drawBackground(int x, int y, int sizeX, int sizeY) {
@@ -200,26 +132,6 @@ void drawBackground(int x, int y, int sizeX, int sizeY) {
     }
 
     popStyle();
-}
-
-void drawParticles(int x, int y, int sizeX, int sizeY) {
-    pushStyle();
-
-    noStroke();
-    for (Particle particle : particles)
-    {
-        float particleX = particle.x;
-        float particleY = particle.y;
-        float particleSize = particle.size;
-        float alpha = lerp(0f, 122f, lightFactor);
-        color c = particle.c;
-        c = color(red(c), green(c), blue(c), alpha);
-        fill(c);
-        ellipse(particleX, particleY, particleSize, particleSize);
-    }
-
-    popStyle();
-
 }
 
 float randomTod(float seed) {
