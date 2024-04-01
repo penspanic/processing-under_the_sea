@@ -43,11 +43,11 @@ void ray(int x, int y) {
 
   // 2
   if (rayTailDir == 1) {
-    bezierVertex(x-112, y-38, x-128, y-53, x-148, y-25); //4~5 꼬리
+    bezierVertex(x-112, y-38, x-128, y-53, x-148, y-29); //4~5 꼬리
     bezierVertex(x-167, y-16, x-121, y-42, x-108, y-22); //5~6
   } else {
-    bezierVertex(x-112, y-38, x-162, y-43, x-150, y-50); //4~5 꼬리
-    bezierVertex(x-167, y-40, x-112, y-20, x-108, y-22); //5~6
+    bezierVertex(x-125, y-31, x-162, y-43, x-156, y-50); //4~5 꼬리
+    bezierVertex(x-167, y-40, x-126, y-11, x-107, y-15); //5~6
   }
   bezierVertex(x-108, y-22, x-109, y+15, x-87, y+40); //6~7
   bezierVertex(x-87, y+40, x-60, y+41, x-37, y+16); //7~8
