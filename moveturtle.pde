@@ -24,9 +24,9 @@ void turtle(int x, float y) {
   curveVertex(x-6, y-30);
   curveVertex(x-115, y+18);
   endShape();
-  
+
   ellipse(x-50, y-18, 50, 15);
-  
+
   beginShape();
   curveVertex(x+70, y+99);
   curveVertex(x+51, y-14);
@@ -35,7 +35,7 @@ void turtle(int x, float y) {
   curveVertex(x+39, y-32);
   curveVertex(x-153, y+22);
   endShape();
-  
+
   beginShape();
   curveVertex(x-109, y-181);
   curveVertex(x-21, y-14);
@@ -53,15 +53,30 @@ void turtle(int x, float y) {
   curveVertex(x-63, y+2);
   curveVertex(x-96, y-8);
   endShape();
-  
-  stroke(71, 64, 24);
-  strokeWeight(2);
-  line(x-55, y+0, x+22, y-55);
-  line(x-12, y-2, x+45, y-47);
-  line(x+58, y-7, x-4, y-57);
-  line(x+19, y-5, x-32, y-51);
-  
-  noStroke();
-  fill(#000000);
+
+  stroke(56, 82, 31);
+  strokeWeight(4);
+  line(x-33, y-16, x+23, y-52);
+  line(x-1, y-13, x+41, y-42);
+  line(x+41, y-19, x-9, y-46);
+  line(x+24, y-10, x-31, y-40);
+
+  noStroke();//qkfxhq
+  fill(#464343);
+  ellipse(x-58, y+29, 6, 9);
+  ellipse(x-46, y+30, 6, 9);
+  ellipse(x-34, y+27, 6, 9);
+  ellipse(x+13, y+31, 6, 9);
+  ellipse(x+24, y+30, 6, 9);
+  ellipse(x+34, y+27, 6, 9);
+
+  fill(#d6e090, 70);
+  ellipse(x-2, y-50, 23, 5);
+  ellipse(x+24, y-51, 9, 4);
+
+  fill(#679b44);
+  rect(x-61, y-8, 126, 13, 41);
+
+  fill(#000000);//sns
   ellipse(x+83, y-72, 6, 5);
 }
